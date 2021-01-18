@@ -1,0 +1,81 @@
+.site-header {
+    height: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__top {
+        background-image: url('../img/Triangle.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 40px;
+        padding-bottom: 84px;
+        width: 100%;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+    }
+
+    &__blank {
+        border: 0;
+        background-color: #fff;
+        padding-bottom: 0;
+        margin-right: 15px;
+        border-radius: 6px;
+        padding: 10px 10px 6px 10px;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 16px;
+        color: #19202D;
+
+        &:hover {
+            background-color: #040057;
+            color: #fff;
+        }
+    }
+
+    &__toggler {
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            width: 20px;
+            height: 18px;
+            margin-right: 53px;
+            background-image: url('../img/sun.svg');
+            background-repeat: no-repeat;
+        }
+
+        &::after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            margin-left: 16px;
+            background-image: url('../img/moon.svg');
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        border-radius: 6px;
+        padding: 16px 16px 16px 32px;
+        height: 80px;
+        margin-top: -40px;
+    }
+}

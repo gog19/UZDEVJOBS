@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Kumbh Sans", "Arial", sans-serif;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }

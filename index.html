@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>UzDev Jobs</title>
+</head>
+
+<body class="page-body">
+
+  <header class="site-header">
+    <section class="site-header__top">
+      <div class="container site-header__container">
+        <a class="site-header__logo logo" href="index.html">
+          <img class="logo__img" src="./img/devjobs.png" srcset="./img/devjobs.png 1x, ./img/devjobs@2x.png 2x"
+            alt="site logo" width="115" height="32">
+        </a>
+        <div class="site-header__right">
+          <button class="site-header__blank" data-bs-toggle="modal" data-bs-target="#fillingTheBlank">Fill the
+            blank</button>
+          <div class="site-header__toggler form-check form-switch mb-0">
+            <input class="form-check-input" style="padding: 10px; background-color: rgb(233, 233, 233);" type="checkbox"
+              id="flexSwitchCheckDefault">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section class="site-header__bottom">
+
+        <form
+          class="site-header__js-form header-bottom__form form d-flex align-items-center justify-content-between flex-grow-1"
+          action="https://echo.htmlacademy.ru" method="GET">
+          <input class="site-header__js-input form-control-sm w-25" placeholder="Title, Technology" type="search">
+
+          <select class="form__js-location form__location">
+            <option value="">Select location ...</option>
+            <option value="All">All</option>
+            <option value="Toshkent">Toshkent</option>
+            <option value="Toshkent viloyati">Toshkent viloyati</option>
+            <option value="Samarqand">Samarqand</option>
+            <option value="Navoiy">Navoiy</option>
+            <option value="Andijon">Andijon</option>
+            <option value="Farg`ona">Farg'ona</option>
+            <option value="Xorazm">Xorazm</option>
+            <option value="Qashqadaryo">Qashqadaryo</option>
+            <option value="Namangan">Namangan</option>
+            <option value="Sirdaryo">Sirdaryo</option>
+            <option value="Jizzax">Jizzax</option>
+            <option value="Surxondaryo">Surxondaryo</option>
+            <option value="Qoraqalqog`iston">Qoraqalqog'iston</option>
+          </select>
+          <select class="form__working-time">
+            <option value="">Working time</option>
+            <option value="All">All</option>
+            <option value="9:00 - 18:00">9:00 - 18:00</option>
+            <option value="9:00 - 14:00">9:00 - 14:00</option>
+            <option value="13:00 - 18:00">13:00 - 18:00</option>
+            <option value="13:30 - 21:30">13:30 - 21:30</option>
+            <option value="moslashuvchan">Moslashuvchan</option>
+          </select>
+          <input class="form__js-salary form__salary-input" type="text" placeholder="Minimum salary">
+          <button class="form__submit-btn" type="submit">Search</button>
+        </form>
+      </section>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container">
+      <ul class="site-main__list">
+        <!-- <li class="site-main__item">
+          <span class="site-main__js-time text-secondary d-block mb-2">5h ago</span>
+          <a class="site-main__js-link site-main__link mb-3" href="#" data-bs-toggle="modal"
+            data-bs-target="#moreInfo">Senior
+            Software Engineer</a>
+          <p class="site-main__js-company site-main__company">So Digital Inc.</p>
+          <p class="site-main__js-location site-main__location">Remote, Seoul, Tokyo, Mountain View, San Fransisco
+          </p>
+        </li> -->
+      </ul>
+    </div>
+  </main>
+
+
+
+  <template class="result-template">
+    <li class="site-main__item">
+      <span class="site-main__js-time text-secondary d-block mb-2">5h ago</span>
+      <a class="site-main__js-link site-main__link mb-3" href="#" data-bs-toggle="modal"
+        data-bs-target="#moreInfo">Senior
+        Software Engineer</a>
+      <p class="site-main__js-company site-main__company">So Digital Inc.</p>
+      <p class="site-main__js-location site-main__location">Remote, Seoul, Tokyo, Mountain View, San Fransisco
+      </p>
+    </li>
+  </template>
+
+
+
+  <div class="modal fade" id="fillingTheBlank" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal__js-title modal-title" id="exampleModalLabel">E'lon berish</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="modal__js-form modal__form" id="for-btn" action="">
+            <input class="modal__js-title-input form-control-sm w-100 mb-4" type="text" required placeholder="Title">
+            <input class="modal__js-company-input form-control-sm w-100 mb-4" type="text" required
+              placeholder="Company name">
+            <input class="modal__js-tech-input form-control-sm w-100 mb-4" type="text" required
+              placeholder="Technologies">
+            <input class="modal__js-telegram-input form-control-sm w-100 mb-4" type="text" required
+              placeholder="Telegram">
+            <input class="modal__js-phone-input form-control-sm w-100 mb-4" type="number" required
+              placeholder="Phone number">
+            <select class="modal__js-location form__location mb-4 w-100 text-dark" required>
+              <option value="">Filter by location...</option>
+              <option value="All">All</option>
+              <option value="Toshkent">Toshkent</option>
+              <option value="Toshkent viloyati">Toshkent viloyati</option>
+              <option value="Samarqand">Samarqand</option>
+              <option value="Navoiy">Navoiy</option>
+              <option value="Andijon">Andijon</option>
+              <option value="Farg`ona">Farg'ona</option>
+              <option value="Xorazm">Xorazm</option>
+              <option value="Qashqadaryo">Qashqadaryo</option>
+              <option value="Namangan">Namangan</option>
+              <option value="Sirdaryo">Sirdaryo</option>
+              <option value="Jizzax">Jizzax</option>
+              <option value="Surxondaryo">Surxondaryo</option>
+              <option value="Qoraqalqog`iston">Qoraqalqog`iston</option>
+            </select>
+            <input class="modal__js-responsible form-control-sm w-100 mb-4" required type="text"
+              placeholder="Responsible person">
+            <select class="modal__js-time form__location mb-4 w-100 text-dark" required>
+              <option value="">Working time</option>
+              <option value="9:00 - 18:00">9:00 - 18:00</option>
+              <option value="9:00 - 14:00">9:00 - 14:00</option>
+              <option value="13:00 - 18:00">13:00 - 18:00</option>
+              <option value="13:30 - 21:30">13:30 - 21:30</option>
+            </select>
+            <input class="modal__js-salary form-control-sm w-100 mb-4" type="text" required
+              placeholder="Minimum annual salary">
+            <textarea class="modal__js-more form__textarea form-control w-100 text-dark"
+              placeholder="More info"></textarea>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="modal__js-add-btn btn btn-primary" form="for-btn" type="submit">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal js-modal-info fade modal-more-info" id="moreInfo" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal__js-title-result modal-title h4" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="w-100">
+            <div>
+              <p class="d-block">Company Name: <span class="modal__js-company-name text-danger"></span>
+              </p>
+              <p>Location: <span class="modal__js-location-result text-danger"></span>
+              </p>
+            </div>
+            <p>Technologies: <span class="modal__js-tech-result text-danger"></span></p>
+            <div class="d-flex flex-column justify-content-between">
+              <div class="mb-3">
+                <p class="mb-0">Telegram: <a class="modal__js-telegram-link" href="#"></a></p>
+              </div>
+              <div class="mb-2">
+                <p class="mb-0">Phone number: <a class="modal__js-phone-number ml-5 text-decoration-none"></a>
+                </p>
+              </div>
+              <div class="mb-2">
+                <p class="mb-0">Salary: $<span class="modal__js-salary ml-5 text-danger"></span></p>
+              </div>
+            </div>
+            <div>
+              <p class="my-2 mb-3">Ma'sul: <span class="modal__js-responsible-person text-danger"></span></p>
+              <div class="d-flex align-items-center">
+                <span>Working time: <time class="modal__js-working-time text-danger"></time></span>
+              </div>
+            </div>
+          </div>
+          <p class="modal__js-more-info float-left border-top pt-3 my-5"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://kit.fontawesome.com/5ecb376021.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+  <script src="js/normalized.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
