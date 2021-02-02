@@ -28,33 +28,14 @@ var clearInputFunction = function () {
   elMoreInfo.value = '';
 }
 
-var counterTime = $_('.site-main__js-time');
-var seconds = $_('.seconds');
-var totalSeconds = 0;
-setInterval(setTime, 1000);
 
-function setTime() {
-  ++totalSeconds;
-  // counterTime.innerHTML = interActiveTime(totalSeconds % 60);
-  // seconds.innerHTML = interActiveTime(parseInt(totalSeconds / 60));
-}
-
-function interActiveTime(val) {
-  var valString = val + '';
-  if (valString.length < 2) {
-    return '0' + valString;
-  } else {
-    return valString
-  }
-}
-
-var showResultList = function (evt) {
+var showResultList = function (data) {
   elResultList.innerHTML = '';
-  evt.forEach(info => {
+  data.forEach(info => {
     var elTemplateClone = elResultTemplate.cloneNode(true);
 
     $_('.site-main__js-link', elTemplateClone).textContent = info.title;
-    $_('.site-main__js-link', elTemplateClone).dataset.target = info.id;
+    $_('.site-main__js-link', elTemplateClone).dataset.id = info.companyName;
     $_('.site-main__js-company', elTemplateClone).textContent = info.companyName;
     $_('.site-main__js-location', elTemplateClone).textContent = info.location;
 
@@ -91,38 +72,45 @@ elForm.addEventListener('submit', function (evt) {
     localStorage.setItem('list', JSON.stringify(userInfoArray));
   }
 
-  console.log(userInfoArray);
-
   showResultList(userInfoArray);
 
   clearInputFunction();
 
-})
+});
+
+if (userInfoArray.length === 0) {
+  document.querySelector('.info-alert').classList.remove('d-none');
+}
 
 showResultList(userInfoArray);
 
-var jsModalInfo = $_('.js-modal-info');
+function showModalInfo(info) {
+  let modalInfo = $_('.js-modal-info');
+
+  $_('.modal__js-title-result', modalInfo).textContent = info.title;
+  $_('.modal__js-company-name', modalInfo).textContent = info.companyName;
+  $_('.modal__js-location-result', modalInfo).textContent = info.location;
+  $_('.modal__js-tech-result', modalInfo).textContent = info.technologies;
+  $_('.modal__js-telegram-link', modalInfo).textContent = info.telegram;
+  $_('.modal__js-phone-number', modalInfo).textContent = info.phone;
+  $_('.modal__js-phone-number', modalInfo).href = `tel:${info.phone}`;
+  $_('.modal__js-responsible-person', modalInfo).textContent = info.responsible;
+  $_('.modal__js-working-time', modalInfo).textContent = info.workingTime;
+  $_('.modal__js-more-info', modalInfo).textContent = info.moreInfo;
+  $_('.modal__js-salary', modalInfo).textContent = info.salary;
+
+  return modalInfo;
+}
 
 elResultList.addEventListener('click', evt => {
   if (evt.target.matches('.site-main__link')) {
     var findElement = userInfoArray.find(function (number) {
-      return Number(evt.target.dataset.target) === number.id;
+      return evt.target.dataset.id === number.companyName;
     });
 
-
-    $_('.modal__js-title-result', jsModalInfo).textContent = findElement.title;
-    $_('.modal__js-company-name', jsModalInfo).textContent = findElement.companyName;
-    $_('.modal__js-location-result', jsModalInfo).textContent = findElement.location;
-    $_('.modal__js-tech-result', jsModalInfo).textContent = findElement.technologies;
-    $_('.modal__js-telegram-link', jsModalInfo).textContent = findElement.telegram;
-    $_('.modal__js-phone-number', jsModalInfo).textContent = findElement.phone;
-    $_('.modal__js-phone-number', jsModalInfo).href = `tel:${findElement.phone}`;
-    $_('.modal__js-responsible-person', jsModalInfo).textContent = findElement.responsible;
-    $_('.modal__js-working-time', jsModalInfo).textContent = findElement.workingTime;
-    $_('.modal__js-more-info', jsModalInfo).textContent = findElement.moreInfo;
-    $_('.modal__js-salary', jsModalInfo).textContent = findElement.salary;
+    showModalInfo(findElement);
   }
-})
+});
 
 
 var elHeaderForm = $_('.site-header__js-form');
@@ -154,11 +142,30 @@ elHeaderForm.addEventListener('submit', evt => {
   showResultList(filterWithName);
 });
 
+var theme = localStorage.getItem('theme') || 'light';
+var customInput = $_('.custom-control-input');
+
+if (theme === 'dark') {
+  document.body.classList.add('page-body--theme');
+  customInput.checked = true;
+} else if (theme === 'light') {
+  document.body.classList.remove('page-body--theme');
+  customInput.checked = false;
+}
 
 
-// var onlineTime = function () {
-//   var currentDate = new Date();
-//   var dateTime = currentDate.getMinutes();
-//   return dateTime
-// }
-
+customInput.addEventListener('click', () => {
+  if (!customInput.checked) {
+    if (theme === 'dark') {
+      theme = 'light';
+      document.body.classList.remove('page-body--theme');
+      localStorage.setItem('theme', theme);
+    }
+  } else if (customInput.checked) {
+    if (theme === 'light') {
+      theme = 'dark';
+      document.body.classList.add('page-body--theme');
+      localStorage.setItem('theme', theme);
+    }
+  }
+})

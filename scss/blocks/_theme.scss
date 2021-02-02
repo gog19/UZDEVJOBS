@@ -1,0 +1,18 @@
+:root {
+    --bg-color: #F2F2F2;
+    --text-color: rgba(0, 9, 44, 0.8);
+}
+
+.page-body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.page-body--theme {
+    --bg-color: rgba(0, 9, 44, 0.8);
+    --text-color: #fff;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: darkblue !important;
+}

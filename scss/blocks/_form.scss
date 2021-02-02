@@ -41,7 +41,6 @@
     }
 
     &__location {
-        border: 1px solid rgba(128, 118, 118, 0.7);
         padding: 5px;
         border-radius: 4px;
         font-weight: normal;
@@ -49,11 +48,6 @@
         width: 200px;
         line-height: 16px;
         color: rgba(25, 32, 45, 0.5);
-        border-right: 1px solid #333;
-    }
-
-    &__location-img {
-        margin-right: 16px;
     }
 
     &__label {
@@ -97,7 +91,6 @@
     }
 
     &__working-time {
-        border: 1px solid rgba(128, 118, 118, 0.7);
         padding: 5px;
         border-radius: 4px;
         font-weight: normal;
@@ -105,7 +98,6 @@
         width: 200px;
         line-height: 16px;
         color: rgba(25, 32, 45, 0.5);
-        border-right: 1px solid #333;
     }
 
     &__textarea {
@@ -113,9 +105,6 @@
     }
 }
 
-.form__checkbox:checked ~ .form__checkbox-span {
-    background-color: #5964E0;
-    background-image: url('../img/checked.svg');
-    background-position: center;
-    background-repeat: no-repeat;
+.custom-control-label {
+    margin-bottom: 20px !important;
 }

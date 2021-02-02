@@ -496,7 +496,7 @@ img {
   content: "";
   width: 12px;
   height: 12px;
-  margin-left: 16px;
+  margin-left: 12px;
   background-image: url("../img/moon.svg");
   background-repeat: no-repeat;
 }
@@ -579,7 +579,6 @@ img {
 }
 
 .form__location {
-  border: 1px solid rgba(128, 118, 118, 0.7);
   padding: 5px;
   border-radius: 4px;
   font-weight: normal;
@@ -587,11 +586,6 @@ img {
   width: 200px;
   line-height: 16px;
   color: rgba(25, 32, 45, 0.5);
-  border-right: 1px solid #333;
-}
-
-.form__location-img {
-  margin-right: 16px;
 }
 
 .form__label {
@@ -639,7 +633,6 @@ img {
 }
 
 .form__working-time {
-  border: 1px solid rgba(128, 118, 118, 0.7);
   padding: 5px;
   border-radius: 4px;
   font-weight: normal;
@@ -647,18 +640,14 @@ img {
   width: 200px;
   line-height: 16px;
   color: rgba(25, 32, 45, 0.5);
-  border-right: 1px solid #333;
 }
 
 .form__textarea {
   resize: none !important;
 }
 
-.form__checkbox:checked ~ .form__checkbox-span {
-  background-color: #5964E0;
-  background-image: url("../img/checked.svg");
-  background-position: center;
-  background-repeat: no-repeat;
+.custom-control-label {
+  margin-bottom: 20px !important;
 }
 
 .site-main {
@@ -758,5 +747,24 @@ img {
   color: #5964E0;
   width: 270px;
   margin-bottom: 0;
+}
+
+:root {
+  --bg-color: #F2F2F2;
+  --text-color: rgba(0, 9, 44, 0.8);
+}
+
+.page-body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.page-body--theme {
+  --bg-color: rgba(0, 9, 44, 0.8);
+  --text-color: #fff;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: darkblue !important;
 }
 /*# sourceMappingURL=styles.css.map */
