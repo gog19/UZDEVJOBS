@@ -76,11 +76,20 @@ elForm.addEventListener('submit', function (evt) {
 
   clearInputFunction();
 
+  checkLength();
+
 });
 
-if (userInfoArray.length === 0) {
-  document.querySelector('.info-alert').classList.remove('d-none');
+function checkLength() {
+  if (userInfoArray.length === 0) {
+    document.querySelector('.info-alert').classList.remove('d-none');
+  } else if (userInfoArray.length > 0) {
+    document.querySelector('.info-alert').classList.add('d-none');
+  }
 }
+
+checkLength();
+
 
 showResultList(userInfoArray);
 
